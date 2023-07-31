@@ -1,0 +1,96 @@
+{
+  "name": "petr-age-on-click",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/petr-age-on-click/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/petr-age-on-click",
+        "index": "apps/petr-age-on-click/src/index.html",
+        "baseHref": "/",
+        "main": "apps/petr-age-on-click/src/main.tsx",
+        "tsConfig": "apps/petr-age-on-click/tsconfig.app.json",
+        "assets": [
+          "apps/petr-age-on-click/src/favicon.ico",
+          "apps/petr-age-on-click/src/assets"
+        ],
+        "styles": ["apps/petr-age-on-click/src/styles.css"],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/petr-age-on-click/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/petr-age-on-click/src/environments/environment.ts",
+              "with": "apps/petr-age-on-click/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "petr-age-on-click:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "petr-age-on-click:build:development"
+        },
+        "production": {
+          "buildTarget": "petr-age-on-click:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/petr-age-on-click/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "petr-age-on-click:build"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/petr-age-on-click/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

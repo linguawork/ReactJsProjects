@@ -1,0 +1,17 @@
+
+.header {
+
+    grid-area: h;
+    background-color: rgb(134, 223, 134);
+
+}
+
+/* if there is a header img then we define size 
+if header true, move to img which is true
+оператор замыкания
+*/
+.header img{ 
+    width: 40px;
+    height: 40px;
+    
+}

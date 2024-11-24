@@ -1,0 +1,55 @@
+
+.app-wrapper{
+    display: grid;
+    /* ширина на 100%, 1200px */
+    width: 100%; 
+    /* margin: 0 auto; */
+    /* высота */
+    height: 500px;
+
+    /*  
+        расположение элементов
+        Ниже прописано 
+        3 ряда (50px 1fr 50px)
+        2 колонки (100px 1fr;)
+        размещение по секциям
+    */
+
+    grid-template-areas: 
+    'h h' 
+    'n c'
+    'n f';
+
+    grid-template-rows: 50px 650px 50px; /* три ряда верх,середина, низ */
+    grid-template-columns: 100px 1fr; /* размер 2х колонок */
+    grid-gap: 5px;
+}
+
+
+
+
+
+
+
+
+
+.ava_description {
+    
+    display: grid;
+    /* 1 ряд высотой 40 px */
+    grid-template-rows: 60px;
+    /* 2 колонки размером по 5% 15% */
+    grid-template-columns: 5% 15%;
+    grid-gap: 20px;
+
+}
+
+.ava_description img{
+    width: 60px;
+    height: 60px;
+}
+
+.description_text{
+    font-size: 10;
+    font-family: 'Courier New', Courier, monospace;
+}

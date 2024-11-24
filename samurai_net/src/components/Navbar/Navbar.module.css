@@ -1,0 +1,20 @@
+.navbar {
+    grid-area: n; 
+    display: grid;
+    /* distance b/n grids */
+    grid-gap: 2px;
+    /*  a row height */
+    grid-auto-rows: 15px; 
+    background-color: rgb(14, 120, 14);
+    
+}
+
+.item{
+
+    color:white;
+}
+
+.item.active{
+
+    color: gold;
+}

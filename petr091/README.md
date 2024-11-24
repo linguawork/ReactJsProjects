@@ -18,6 +18,9 @@ cd my-app
 npm start
 ```
 
-The project folder: "review" contains hook components with links to Internet resources
 
-Petr** contains the practicing context: reactjs + bootstrap. The readme file contains screenshot and additional resources. 
+
+### THE APP SCREENSHOT
+This screenshot is the same directory.
+
+![alt text](<Screenshot from 2024-11-24 11-47-18.png>)

@@ -22,3 +22,7 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+
+## ABOUT THE PROJECT
+Though createStore is deprecated I am still using it for the purpose of understanding. This may help with legacy code work as
+there are many companies who developed their projects in the past several years. 

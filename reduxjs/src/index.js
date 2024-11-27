@@ -48,8 +48,8 @@ const defaultState = {
 */
 
 const defaultState = {
-  cash: 5,
-  // payload: 0 
+  cash: 5
+
 }
 
 

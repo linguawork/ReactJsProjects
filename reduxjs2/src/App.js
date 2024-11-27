@@ -3,6 +3,12 @@ import './App.css';
 import {useDispatch, useSelector} from 'react-redux'
 
 
+//3 метода для работы с состоянием
+//methods to get state
+//to change state with the help of dispatch
+//подписаться на изменение состояния
+
+
 function App() {
   
   //4:47
@@ -13,22 +19,60 @@ function App() {
   //чтобы ПОЛУЧИТЬ состояние нужно использовть хук useSelector
   //он принимает функцию параметром
   // a функция принимает состояние
-  const cash = useSelector(state => state.cash)
+
+  //так как редюсер имеет ключ в rootReducer
+  //обращаемся к нему по ключу
+  // если нет ключа, то обращаемся без ключа
+  const cash = useSelector(state => state.cash.cash)
   console.log(cash)
 
-  const addCash = () =>{
 
+/** не печатает prompt*/
+
+//   //можем вводить то, что реально нужно
+//   const addCash = (cash) =>{
+//     //подаем объект action.type as type from reducer
+//     dispatch({type:"ADD_CASH", payload: {cash}})
+//   }
+
+
+//   const withdrawCash =(cash) =>{
+//        //подаем объект action.type as type from reducer
+//        dispatch({type:"GET_CASH", payload: cash})
+//   }
+
+
+
+//   return (
+//     <div className="App">
+//       <div style={{fontSize: '3rem'}}>{cash}</div>
+//       <div style = { {display: "flex"} }>
+
+//         {/* моя ошибка - не вызывать функции а вызывать ссылки на них, то есть только названия, без () */}
+//         {/* теперь можно вводить значения сразу из браузера через меню  
+//         функция prompt возвращает строку, нужно преобразовать ее в Number
+//         */}
+//           <button onClick={addCash(Number(prompt()))}> Пополнить счет</button>
+//           <button onClick={withdrawCash(Number(prompt()))}>Снять со счета </button>
+//           <a href='https://www.youtube.com/watch?v=Dzzeir85i3c&list=PLYlfM6qKBI5jC49wKnTGtpa4neWiWj72Y&index=2'>video</a>
+
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+  //можем вводить то, что реально нужно
+  const addCash = () =>{
     //подаем объект action.type as type from reducer
     dispatch({type:"ADD_CASH", payload: 5})
-
-
   }
 
 
   const withdrawCash =() =>{
        //подаем объект action.type as type from reducer
-       dispatch({type:"GET_CASH", payload: 5})
-
+       dispatch({type:"GET_CASH", payload: 4})
   }
 
 
@@ -36,13 +80,25 @@ function App() {
   return (
     <div className="App">
       <div style={{fontSize: '3rem'}}>{cash}</div>
-      <div style = { {display: "flex"} }>
+      <div style = { {display: ""} }>
 
         {/* моя ошибка - не вызывать функции а вызывать ссылки на них, то есть только названия, без () */}
+        {/* теперь можно вводить значения сразу из браузера через меню  
+        функция prompt возвращает строку, нужно преобразовать ее в Number
+        */}
           <button onClick={addCash}> Пополнить счет</button>
-          <button onClick={withdrawCash}>Снять со счета </button>
-          <a href='https://www.youtube.com/watch?v=Dzzeir85i3c&list=PLYlfM6qKBI5jC49wKnTGtpa4neWiWj72Y&index=2'>video</a>
+          <br/>
+          <br/>
 
+          <button onClick={withdrawCash}>Снять со счета </button>
+          <br/>
+          <br/>
+
+          <a href='https://www.youtube.com/watch?v=Dzzeir85i3c&list=PLYlfM6qKBI5jC49wKnTGtpa4neWiWj72Y&index=2'>combineReducers, redux devtools</a>
+          <br/>
+          <br/>
+
+          <a href='https://www.youtube.com/watch?v=ax1verdkVPo'>About MiddleWare</a>
       </div>
     </div>
   );

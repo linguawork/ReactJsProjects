@@ -1,20 +1,20 @@
 /*
-Conclusion:
+    Conclusion:
 
-React doesn’t mix or execute multiple index.js files because:
+    React doesn’t mix or execute multiple index.js files because:
 
-It only executes the entry point file (src/index.js),
-which is connected to the index.html where the React app is 
-rendered.
+    It only executes the entry point file (src/index.js),
+    which is connected to the index.html where the React app is 
+    rendered.
 
-Other index.js files are simply modules that export 
-functionality and are not executed unless explicitly 
-imported into other files.
+    Other index.js files are simply modules that export 
+    functionality and are not executed unless explicitly 
+    imported into other files.
 
-The module system (ESM) ensures that each file 
-is treated as a separate entity, 
-and only imported code is included in the final bundle. 
-This keeps the logic separated and organized.
+    The module system (ESM) ensures that each file 
+    is treated as a separate entity, 
+    and only imported code is included in the final bundle. 
+    This keeps the logic separated and organized.
 */
 
 import {createStore, combineReducers} from 'redux';
@@ -22,6 +22,7 @@ import {createStore, combineReducers} from 'redux';
 //import inside local index.js the reducer
 import { cashReducer } from './cashReducer';
 import { customerReducer } from './customerReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 /*
@@ -55,16 +56,18 @@ const rootReducer = combineReducers(    {
 первый параметр - это редьюсер (это простая функция)
 подаем сюда редюсер из компонента и экспортируем store чтобы подать его в основной индекс
 the second parameter can be Middleware or devtools
-The devtools are installed with:
+Install in 3 steps:
+1 The devtools are installed with:
 npm i redux-devtools-extension
 
-After installing we need import 
+2 After installing we need import 
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-
-
-
+3 Add extension redux DevTools for Chrome or Mozilla Firefox
+(On browser, f12 to check redux state)
 */
-export const store = createStore(rootReducer)
+
+//composeWithDevTools(), calling the function itself with (), not the reference
+export const store = createStore(rootReducer, composeWithDevTools())
 
 

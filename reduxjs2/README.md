@@ -58,10 +58,21 @@ npm install redux@^4.0.0
 Then run one of the commands: 
 ```
 npm install redux-devtools-extension
+```
 OR
+
+```
 npm install redux-devtools-extension --legacy-peer-deps
 ```
 
 
 ## The screenshot of the redux devtools extension in browser:
 ![alt text](<Screenshot from 2024-11-27 20-32-36.png>)
+
+
+When installing dependencies for deprecated packages of redux etc
+the flag may help:
+```
+--legacy-peer-deps
+```
+

@@ -9,7 +9,7 @@
 
 //value is integer
 const defaultState = {
-    cash: 5
+    cash: 0
 
   }
   

@@ -93,12 +93,8 @@ function App() {
           <button onClick={withdrawCash}>Снять со счета </button>
           <br/>
           <br/>
-          <a href='https://www.youtube.com/watch?v=Dzzeir85i3c&list=PLYlfM6qKBI5jC49wKnTGtpa4neWiWj72Y&index=2'>combineReducers, redux devtools</a>
-          <br/>
-          <br/>
-
-          <a href='https://www.youtube.com/watch?v=ax1verdkVPo'>About MiddleWare</a>
-
+          <a href='https://www.youtube.com/watch?v=WLeK7vIEi5I'>State with Array</a>
+          <br/>        
       </div>
     </div>
   );

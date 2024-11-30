@@ -1,6 +1,12 @@
 import { addManyCustomersActionCreator } from "../store/customerReducer"
 
+/*
+Суть ридакс фанк
 
+позволяет прокинуть в сторонние функции dispatch (dispatchHook)
+и мы можем им пользоваться
+
+*/
 
 
 export const fetchCustomers =()=>{

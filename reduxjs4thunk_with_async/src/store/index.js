@@ -17,13 +17,17 @@
     This keeps the logic separated and organized.
 */
 
-import {createStore, combineReducers} from 'redux';
+
+
+// import thunk
+import {thunk} from 'redux-thunk';
+//when working with Thunk dont forget to import applyMiddleware
+import {createStore, combineReducers, applyMiddleware } from 'redux';
 
 //import inside local index.js the reducer
 import { cashReducer } from './cashReducer';
 import { customerReducer } from './customerReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
 
 /*
     Чтобы импортировать больше 1 редьюсера нужна функция из редакс 
@@ -68,6 +72,9 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 */
 
 //composeWithDevTools(), calling the function itself with (), not the reference
-export const store = createStore(rootReducer, composeWithDevTools())
+
+//for redux thunk put applyMiddleware() as parameter to composeWithDevTools() and inside pass thunk
+// import thunk from 'redux-thunk'
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 

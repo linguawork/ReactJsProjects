@@ -1,7 +1,9 @@
 
 import './App.css';
 import {useDispatch, useSelector} from 'react-redux'
-import { addCustomerActionCreator, deleteCustomerActionCreator } from './store/customerReducer';
+import { addCustomerActionCreator, deleteCustomerActionCreator, addManyCustomersActionCreator } from './store/customerReducer';
+import { fetchCustomers } from './asyncActions/customers';
+
 
 
 //3 метода для работы с состоянием
@@ -20,7 +22,7 @@ function App() {
   
   //чтобы ПОЛУЧИТЬ состояние нужно использовть хук useSelector
   //он принимает функцию параметром
-  // a функция принимает состояние
+  //a функция принимает состояние
 
   //так как редюсер имеет ключ в rootReducer
   //обращаемся к нему по ключу
@@ -134,6 +136,17 @@ const deleteCustomers =() =>{
 }
 
 
+// const fetchCustomers =()=>{
+    
+    
+//   return function (){
+//       fetch('https://jsonplaceholder.typicode.com/users')
+//       .then(response => response.json())
+//       .then(json => dispatch(addManyCustomersActionCreator(json)))
+//   }
+// }
+
+
 
 
   return (
@@ -150,6 +163,7 @@ const deleteCustomers =() =>{
           <br/>
           <br/>
 
+{/* interesting, that we can call function here inside an arrow function, try later */}
           <button onClick={withdrawCash}>Снять со счета </button>
           <br/>
           <br/>
@@ -161,6 +175,11 @@ const deleteCustomers =() =>{
           <br/>
 
           <button  onClick={deleteCustomers} >Удалить клиента</button>
+          <br/>
+          <br/> 
+
+         {/* You can't call the function directly in the JSX. It must either be returned inside another function or wrapped in an arrow function or event handler before it's called. */}
+          <button  onClick={()=>dispatch(fetchCustomers())} >Получить клиентов из базы</button>
           <br/>
           <br/> 
           </div>    
@@ -187,3 +206,7 @@ const deleteCustomers =() =>{
 }
 
 export default App;
+
+
+
+

@@ -20,4 +20,4 @@ npm start
 
 The project folder: "review" contains hook components with links to Internet resources
 
-Petr** contains the practicing context: reactjs + bootstrap. The readme file contains screenshot and additional resources. 
+Petr** contains the practicing context: reactjs + bootstrap. The readme file contains screenshot of an app and additional resources. 

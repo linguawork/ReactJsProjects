@@ -1,6 +1,7 @@
 
 import './App.css';
 import {useDispatch, useSelector} from 'react-redux'
+import { addCustomerActionCreator, deleteCustomerActionCreator } from './store/customerReducer';
 
 
 //3 метода для работы с состоянием
@@ -107,7 +108,14 @@ function App() {
         id: Date.now() 
       }
 
-      dispatch({type:"ADD_CUSTOMER", payload: customer})
+      //так как диспатч принимает action object 
+      //мы можем подавать в нее функцию которая будет принимать payload
+      //а возвращать этот объект action
+      // dispatch({type:"ADD_CUSTOMER", payload: customer})
+      
+      //refactored to
+      dispatch(addCustomerActionCreator(customer))
+
      
     } else {
       alert("Invalid input");
@@ -118,7 +126,10 @@ function App() {
 
 const deleteCustomers =() =>{
       const name = prompt("Enter the name to delete:");
-      dispatch({type:"REMOVE_CUSTOMER", payload: name })
+      // dispatch({type:"REMOVE_CUSTOMER", payload: name })
+      
+      //refactored to
+      dispatch(deleteCustomerActionCreator(name))
      
 }
 
@@ -142,8 +153,9 @@ const deleteCustomers =() =>{
           <button onClick={withdrawCash}>Снять со счета </button>
           <br/>
           <br/>
-          <a href='https://www.youtube.com/watch?v=WLeK7vIEi5I'>State with Array</a>
+          <a href='https://www.youtube.com/watch?v=WLeK7vIEi5I'>Ulbi: ReduxState using array</a>
           <br/> 
+          <br/>
           <button onClick={addCustomers}>Добавить клиента</button>
           <br/>
           <br/>

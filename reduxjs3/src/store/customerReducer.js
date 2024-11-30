@@ -14,12 +14,17 @@ const defaultState = {
     customers: []
 
   }
-  
+
+
+//хорошая практика для свитчей сохранять кейсы в константы
+//при возникновении ошибки удобно дебажить
+const ADD_CUSTOMER ="ADD_CUSTOMER"
+const REMOVE_CUSTOMER = "REMOVE_CUSTOMER"
 
 //как происходит изменение состояния через стейт
 export const customerReducer = (state = defaultState, action) => {
     switch (action.type){   
-      case "ADD_CUSTOMER":
+      case ADD_CUSTOMER:
         // изначально в редаксе состяние является неизменяемым
         // то есть каждый раз нужно возвращать новый обект
         // создаем обект на основе спреда старого и изменяем конкретное поле (их может быть несколько)
@@ -29,7 +34,7 @@ export const customerReducer = (state = defaultState, action) => {
         return {...state, customers: [ ...state.customers, action.payload ] 
            }
   
-      case "REMOVE_CUSTOMER":
+      case REMOVE_CUSTOMER:
         // strict comparison of names in the array: el.name
         return {...state, customers:  state.customers.filter(el => el.name !== action.payload) 
         }
@@ -39,3 +44,23 @@ export const customerReducer = (state = defaultState, action) => {
     }
   }
   
+
+  /*рефакторинг:
+      Для подачи в функцию dispatch
+  */
+  
+  /*
+  export const addCustomerActionCreator =(payload)=>{{type: ADD_CUSTOMER, payload}}
+ 
+  ESLint did not see the implicit return in one line, so had to
+  return explicitly
+
+  */
+
+  export const addCustomerActionCreator =(payload)=>{
+    return {type: ADD_CUSTOMER, payload}
+  }
+
+  export const deleteCustomerActionCreator =(payload)=>{
+    return {type: REMOVE_CUSTOMER, payload}
+  }

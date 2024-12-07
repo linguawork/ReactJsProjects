@@ -24,7 +24,7 @@ npm i redux-thunk
 ```
 
 
-* This the whole command:
+* This the whole command (to install node modules after cloning as well):
 ```
 npm i redux react-redux redux-devtools-extension redux-thunk --legacy-peer-deps
 ```

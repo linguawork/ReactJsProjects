@@ -178,7 +178,8 @@ const deleteCustomers =() =>{
           <br/>
           <br/> 
 
-         {/* You can't call the function directly in the JSX. It must either be returned inside another function or wrapped in an arrow function or event handler before it's called. */}
+         {/* You can't call the function directly in the JSX. It must either be returned inside 
+         another function or wrapped in an arrow function or event handler before it's called. */}
           <button  onClick={()=>dispatch(fetchCustomers())} >Получить клиентов из базы</button>
           <br/>
           <br/> 

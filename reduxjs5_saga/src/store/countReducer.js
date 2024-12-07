@@ -1,11 +1,3 @@
-/*
-Пример декомпозиции
-
-Каждый редюсер помезен в отделбнюу папку с index.js файлом
-
-*/
-
-
 
 //value is integer
 const defaultState = {
@@ -13,26 +5,31 @@ const defaultState = {
 
   }
   
+export const INCREMENT = "INCREMENT"
+export const DECREMENT = "DECREMENT"
 
-
-export const cashReducer = (state = defaultState, action) => {
+export default countReducer = (state = defaultState, action) => {
     switch (action.type){   
-      case "ADD_CASH":
+      case INCREMENT:
         // изначально в редаксе состяние является неизменяемым
         // то есть каждый раз нужно возвращать новый обект
         // создаем обект на основе спреда старого и изменяем конкретное поле (их может быть несколько)
         // 3:27 
-        return {...state, cash: 
+        return {...state, count: 
           //old state cash + new value, that came with action
-          state.cash + action.payload }
+          state.count + 1 }
   
-      case "GET_CASH":
-        return {...state, cash: 
+      case DECREMENT:
+        return {...state, count: 
           //old state cash - new value, that came with action
-          state.cash - action.payload }
-  
+          state.count - 1 }
+
       default:
         return state
     }
   }
+
+
+  export const incrementCreator = () => ({type:INCREMENT})
+  export const decrementCreator = () => ({type:DECREMENT})
   

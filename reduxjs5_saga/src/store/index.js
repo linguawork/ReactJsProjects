@@ -19,15 +19,13 @@
 
 
 
-// import thunk
-import {thunk} from 'redux-thunk';
-//when working with Thunk dont forget to import applyMiddleware
-import {createStore, combineReducers, applyMiddleware } from 'redux';
+
+import {createStore, combineReducers} from 'redux';
 
 //import inside local index.js the reducer
-import { cashReducer } from './cashReducer';
-import { customerReducer } from './customerReducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { countReducer } from './countReducer';
+import { userReducer } from './userReducer';
+
 
 /*
     Чтобы импортировать больше 1 редьюсера нужна функция из редакс 
@@ -51,8 +49,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 */
 const rootReducer = combineReducers(    {
-    cash: cashReducer, 
-    customers: customerReducer  
+    countReducer, 
+    userReducer  
 })
 
 
@@ -60,21 +58,9 @@ const rootReducer = combineReducers(    {
 первый параметр - это редьюсер (это простая функция)
 подаем сюда редюсер из компонента и экспортируем store чтобы подать его в основной индекс
 the second parameter can be Middleware or devtools
-Install in 3 steps:
-1 The devtools are installed with:
-npm i redux-devtools-extension
-
-2 After installing we need import 
-import { composeWithDevTools } from 'redux-devtools-extension'
-
-3 Add extension redux DevTools for Chrome or Mozilla Firefox
-(On browser, f12 to check redux state)
 */
 
-//composeWithDevTools(), calling the function itself with (), not the reference
 
-//for redux thunk put applyMiddleware() as parameter to composeWithDevTools() and inside pass thunk
-// import thunk from 'redux-thunk'
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+export const store = createStore(rootReducer)
 
 

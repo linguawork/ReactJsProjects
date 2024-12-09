@@ -25,6 +25,8 @@ function App() {
     <>
 
       <Clock/>
+
+      {/*компонент to learn the state management in class component */}
       <SetState1/> 
       <SetState2/>
       <SetState3/>

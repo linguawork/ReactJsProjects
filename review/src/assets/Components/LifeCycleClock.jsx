@@ -58,7 +58,9 @@ class Clock extends Component {
 		Sets up an interval to call the tick() method every second after the component has been mounted to the DOM.
 		This is where you typically start any processes that involve timers, subscriptions, or fetching data.
 
-		The setInterval function in JavaScript returns a numeric ID (interval ID) that uniquely identifies the interval timer. This ID can be used to later cancel the interval using the clearInterval function if needed.
+		The setInterval function in JavaScript returns a numeric ID (interval ID) 
+		that uniquely identifies the interval timer. This ID can be used to later 
+		cancel the interval using the clearInterval function if needed.
 
 		
 	Component Will Unmount (componentWillUnmount()):
@@ -73,8 +75,9 @@ class Clock extends Component {
 	
 	Render Method (render()):
 		Renders the JSX to display the current time.
-		Overall, this example demonstrates a common pattern for creating components that need to perform actions over time or in response to changes in the component's lifecycle. It effectively uses lifecycle methods to manage timers and update the component's state accordingly.
-
+		Overall, this example demonstrates a common pattern for creating components 
+		that need to perform actions over time or in response to changes in the component's lifecycle. 
+		It effectively uses lifecycle methods to manage timers and update the component's state accordingly.
 */
 
 

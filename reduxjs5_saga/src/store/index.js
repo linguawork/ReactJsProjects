@@ -20,7 +20,7 @@
 
 
 
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 
 //import inside local index.js the reducer
@@ -28,11 +28,22 @@ import { countReducer } from './countReducer';
 import { userReducer } from './userReducer';
 
 
+//saga 3d step for redux-saga
+import createSagaMiddleware from 'redux-saga';
+//6 Watcher should be passed to sagaMiddleWare
+import { countWatcher } from '../saga/countSaga';
+
+//call the function and save it to a variable
+const sagaMiddleWare = createSagaMiddleware()
+
+
+
+
+
 /*
     Чтобы импортировать больше 1 редьюсера нужна функция из редакс 
-    combine Reducers, wjhich is also imported from redux
+    combine Reducers, which is also imported from redux
     Она объектом принимает количество редюсеров
-
 */
 
 /*
@@ -61,7 +72,10 @@ const rootReducer = combineReducers(    {
 the second parameter can be Middleware or devtools
 */
 
+//4 add applyMiddleware to createStore and inside pass the sagaMiddleWare function 
+export const store = createStore(rootReducer, applyMiddleware(sagaMiddleWare))
 
-export const store = createStore(rootReducer)
+//5 need to run sagaMiddleWare.run() and inside pass a Watcher function
+sagaMiddleWare.run(countWatcher)
 
 

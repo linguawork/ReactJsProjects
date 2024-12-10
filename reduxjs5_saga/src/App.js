@@ -1,7 +1,7 @@
 
 import './App.css';
 import {useDispatch, useSelector} from 'react-redux'
-import {decrementCreator, incrementCreator} from './store/countReducer'
+import {asyncIncrementCreator, asyncDecrementCreator, decrementCreator, incrementCreator} from './store/countReducer'
 
 /* 
   3 понятия для работы с Redux saga:
@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <div className='count'>{count}</div>
       <div className='btns'>
-        <button className='btn' onClick={ ()=>dispatch(incrementCreator()) }> INCREMENT++ </button>
+        <button className='btn' onClick={ ()=>dispatch(asyncIncrementCreator()) }> INCREMENT++ </button>
         <button className='btn' onClick={ ()=>dispatch(decrementCreator()) }> DECREMENT-- </button>
         <button className='btn' > GET USERS </button>
       </div>

@@ -15,7 +15,10 @@ cd to folder and install redux modules:
 npm i redux react-redux redux-devtools-extension redux-thunk --legacy-peer-deps
 ```
 
-
+installing redux-saga to import Effect: put, which is a part of "redux-saga/effects" library. Put is like dispatch function and it is used for synchronous actions, when there is no delay meant
+```
+npm install redux-saga 
+```
 
 
 

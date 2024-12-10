@@ -8,7 +8,8 @@ const defaultState = {
 export const INCREMENT = "INCREMENT"
 export const DECREMENT = "DECREMENT"
 
-export default countReducer = (state = defaultState, action) => {
+//export default can be used only if it is the only variable to export
+export const countReducer = (state = defaultState, action) => {
     switch (action.type){   
       case INCREMENT:
         // изначально в редаксе состяние является неизменяемым

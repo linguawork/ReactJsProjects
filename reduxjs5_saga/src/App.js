@@ -1,7 +1,7 @@
 
 import './App.css';
 import {useDispatch, useSelector} from 'react-redux'
-
+import {decrementCreator, incrementCreator} from './store/countReducer'
 
 /* 
   3 понятия для работы с Redux saga:
@@ -11,7 +11,6 @@ import {useDispatch, useSelector} from 'react-redux'
   Watchers
 
   Effects
-
 */
 
 
@@ -26,7 +25,7 @@ function App() {
     обращаемся к нему по ключу
     если нет ключа, то обращаемся без ключа 
   */
-  const counter = useSelector(state => state.countReducer.count)
+  const count = useSelector(state => state.countReducer.count)
   const users = useSelector(state => state.userReducer.users)
   // console.log(cash)
   /*
@@ -40,8 +39,8 @@ function App() {
     <div className="App">
       <div className='count'>{count}</div>
       <div className='btns'>
-        <button className='btn' onClick={ ()=>dispatch(incrementCreator()) }> INCREMENT </button>
-        <button className='btn' onClick={ ()=>dispatch(decrementCreator()) }> DECREMENT </button>
+        <button className='btn' onClick={ ()=>dispatch(incrementCreator()) }> INCREMENT++ </button>
+        <button className='btn' onClick={ ()=>dispatch(decrementCreator()) }> DECREMENT-- </button>
         <button className='btn' > GET USERS </button>
       </div>
 

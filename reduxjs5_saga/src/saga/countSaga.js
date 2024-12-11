@@ -3,7 +3,7 @@ we use function generators
 
 */
 
-import { ASYNC_INCREMENT, incrementCreator } from "../store/countReducer"
+import { ASYNC_INCREMENT, ASYNC_DECREMENT, decrementCreator, incrementCreator } from "../store/countReducer"
 
 import { put, takeEvery } from 'redux-saga/effects'
 
@@ -40,9 +40,18 @@ export function* countWatcher(){
 
     //первым параметром тип экшна а вторым функцию Работника
     yield takeEvery(ASYNC_INCREMENT, incrementWorker)
+    yield takeEvery(ASYNC_DECREMENT, decrementWorker)
+    
 }
+
+
 
 function* decrementWorker(){
 
+    yield delay(1000)
+    yield put(decrementCreator())
 }
+
+
+
 

@@ -40,7 +40,7 @@ function App() {
       <div className='count'>{count}</div>
       <div className='btns'>
         <button className='btn' onClick={ ()=>dispatch(asyncIncrementCreator()) }> INCREMENT++ </button>
-        <button className='btn' onClick={ ()=>dispatch(decrementCreator()) }> DECREMENT-- </button>
+        <button className='btn' onClick={ ()=>dispatch(asyncDecrementCreator()) }> DECREMENT-- </button>
         <button className='btn' > GET USERS </button>
       </div>
 

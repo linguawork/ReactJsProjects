@@ -2,6 +2,7 @@
 import './App.css';
 import {useDispatch, useSelector} from 'react-redux'
 import {asyncIncrementCreator, asyncDecrementCreator, decrementCreator, incrementCreator} from './store/countReducer'
+import { fetchUsers } from './store/userReducer';
 
 /* 
   3 понятия для работы с Redux saga:
@@ -37,11 +38,12 @@ function App() {
 
   return (
     <div className="App">
+      <a href="https://www.youtube.com/watch?v=ylhHYtTyVGE">video</a>
       <div className='count'>{count}</div>
       <div className='btns'>
         <button className='btn' onClick={ ()=>dispatch(asyncIncrementCreator()) }> INCREMENT++ </button>
         <button className='btn' onClick={ ()=>dispatch(asyncDecrementCreator()) }> DECREMENT-- </button>
-        <button className='btn' > GET USERS </button>
+        <button className='btn' onClick={()=>dispatch(fetchUsers())} > GET USERS </button>
       </div>
 
       <div className='users' >

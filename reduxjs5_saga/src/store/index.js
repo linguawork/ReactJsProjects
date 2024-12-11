@@ -32,6 +32,7 @@ import { userReducer } from './userReducer';
 import createSagaMiddleware from 'redux-saga';
 //6 Watcher should be passed to sagaMiddleWare
 import { countWatcher } from '../saga/countSaga';
+import { rootWatcher } from '../saga';
 
 //call the function and save it to a variable
 const sagaMiddleWare = createSagaMiddleware()
@@ -76,6 +77,10 @@ the second parameter can be Middleware or devtools
 export const store = createStore(rootReducer, applyMiddleware(sagaMiddleWare))
 
 //5 need to run sagaMiddleWare.run() and inside pass a Watcher function
-sagaMiddleWare.run(countWatcher)
+// sagaMiddleWare.run(countWatcher)
+
+//getting global watcher
+sagaMiddleWare.run(rootWatcher)
+
 
 

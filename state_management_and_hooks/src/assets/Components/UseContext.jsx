@@ -25,10 +25,12 @@ import React, { useContext } from 'react';
 
     Need to write his interesting code
 
+    Сравни с UseReducer
+
 */
 
 
-// Step 1: Create a context
+// Step 1: Create a context родительский компонент, глобально
 const MyContext = React.createContext();
 
 // Step 2: Provide a value to the context
@@ -36,13 +38,15 @@ function UseContextHookSample() {
   const value = `Hello, this useContext value is
                 used within a nested component !`;
   return (
+    // внутри компонента возврашем .Provider как в редаксе,
+    // в пропс передаем нужную переменную
     <MyContext.Provider value={value}>
           <ParentComponent />
     </MyContext.Provider>
   );
 }
 
-// Step 3: Consume the context value
+// Step 3: старший подкомпонент
 function ParentComponent() {
     return (
       <div>
@@ -52,8 +56,9 @@ function ParentComponent() {
   }
 
 
+  //младший подкомпонент
 function ChildComponent() {
-// Consume the context value
+// Consume the context value, в подкомпонете черех хук забираем переменную из родительского провайдера
 const value = useContext(MyContext);
 return <div className='state-container'>{value}</div>;
 }

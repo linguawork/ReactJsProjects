@@ -13,6 +13,8 @@ import UseEffectHookSideEffect from './assets/Components/UseEffectHook';
 import UseContextHookSample from './assets/Components/UseContext';
 import NoUseContextHookSample from './assets/Components/NoUseContext';
 import UseReducerHookSimple from './assets/Components/UseReducerHookSimple';
+import UseRefHookDOM from './assets/Components/useRefHookDOM';
+import UseRefHookPrevValue from './assets/Components/useRefHookPrevValue';
 
 
 
@@ -45,6 +47,12 @@ function App() {
       <UseContextHookSample/>
       <NoUseContextHookSample/>
       <UseReducerHookSimple/>
+
+      <UseRefHookDOM/>
+      <UseRefHookPrevValue/>
+
+
+
 
       
     </>

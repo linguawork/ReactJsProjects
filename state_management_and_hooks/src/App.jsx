@@ -12,7 +12,7 @@ import UseStateHookMulti from './assets/Components/UseStateHookMulti';
 import UseEffectHookSideEffect from './assets/Components/UseEffectHook';
 import UseContextHookSample from './assets/Components/UseContext';
 import NoUseContextHookSample from './assets/Components/NoUseContext';
-import UseReducerHook from './assets/Components/UseReducerHook';
+import UseReducerHookSimple from './assets/Components/UseReducerHookSimple';
 
 
 
@@ -44,7 +44,7 @@ function App() {
 
       <UseContextHookSample/>
       <NoUseContextHookSample/>
-      <UseReducerHook/>
+      <UseReducerHookSimple/>
 
       
     </>

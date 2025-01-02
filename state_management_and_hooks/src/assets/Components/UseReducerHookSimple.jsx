@@ -21,7 +21,7 @@ function reducer(state, action){
 
 
 
-export default function UseReducerHook (){
+export default function UseReducerHookSimple (){
 
 //useReducer returns array, not an object
 const [state, dispatch] = useReducer(reducer, {count: 0})

@@ -1,5 +1,21 @@
 ### REACT JS PROJECTS
 
+for vite projects:
+
+```
+npm create vite@latest my-vite-project
+```
+
+cd to folder:
+
+
+```
+npm i
+npm run dev
+```
+
+
+
 To start a React project with JavaScript (JS), use the following command:
 ```
 npx create-react-app my-app

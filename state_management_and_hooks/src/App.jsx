@@ -12,6 +12,7 @@ import UseStateHookMulti from './assets/Components/UseStateHookMulti';
 import UseEffectHookSideEffect from './assets/Components/UseEffectHook';
 import UseContextHookSample from './assets/Components/UseContext';
 import NoUseContextHookSample from './assets/Components/NoUseContext';
+import UseReducerHook from './assets/Components/UseReducerHook';
 
 
 
@@ -21,8 +22,10 @@ import NoUseContextHookSample from './assets/Components/NoUseContext';
 function App() {
 
   return (
+    
     //this is fragment and it should be in round brackets
     <>
+    <header>Hooks</header>
 
       <Clock/>
 
@@ -41,6 +44,7 @@ function App() {
 
       <UseContextHookSample/>
       <NoUseContextHookSample/>
+      <UseReducerHook/>
 
       
     </>

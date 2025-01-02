@@ -10,6 +10,14 @@ The project is created with Vite and is served at
 Local: http://localhost:5173/
 
 ```
+npm create vite@latest my-vite-project
+```
+
+cd to folder:
+
+
+```
+npm i
 npm run dev
 ```
 
